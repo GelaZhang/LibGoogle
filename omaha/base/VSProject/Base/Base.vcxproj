@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{24A5C903-E702-4CBD-83D3-E3328E87AF9D}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Base</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;DEBUG;_CONSOLE;LOGGING;SECURITY_WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../../../third_party/chrome/;../../../../;../../../</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>Advapi32.lib;Version.lib;Crypt32.lib;Psapi.lib;WtsApi32.lib;Rasapi32.lib;Netapi32.lib;Wintrust.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\accounts.h" />
+    <ClInclude Include="..\..\app_util.h" />
+    <ClInclude Include="..\..\auto_any.h" />
+    <ClInclude Include="..\..\browser_utils.h" />
+    <ClInclude Include="..\..\clipboard.h" />
+    <ClInclude Include="..\..\commands.h" />
+    <ClInclude Include="..\..\command_line_parser.h" />
+    <ClInclude Include="..\..\command_line_parser_internal.h" />
+    <ClInclude Include="..\..\command_line_validator.h" />
+    <ClInclude Include="..\..\commontypes.h" />
+    <ClInclude Include="..\..\constants.h" />
+    <ClInclude Include="..\..\constants_port.h" />
+    <ClInclude Include="..\..\const_config.h" />
+    <ClInclude Include="..\..\const_debug.h" />
+    <ClInclude Include="..\..\const_object_names.h" />
+    <ClInclude Include="..\..\const_timeouts.h" />
+    <ClInclude Include="..\..\const_utils.h" />
+    <ClInclude Include="..\..\crc.h" />
+    <ClInclude Include="..\..\disk.h" />
+    <ClInclude Include="..\..\dual_interface_switch.h" />
+    <ClInclude Include="..\..\dynamic_link_dbghelp.h" />
+    <ClInclude Include="..\..\dynamic_link_kernel32.h" />
+    <ClInclude Include="..\..\encrypt.h" />
+    <ClInclude Include="..\..\error.h" />
+    <ClInclude Include="..\..\etw_log_writer.h" />
+    <ClInclude Include="..\..\event_handler.h" />
+    <ClInclude Include="..\..\event_trace_consumer.h" />
+    <ClInclude Include="..\..\event_trace_controller.h" />
+    <ClInclude Include="..\..\event_trace_provider.h" />
+    <ClInclude Include="..\..\exception_barrier.h" />
+    <ClInclude Include="..\..\exception_utils.h" />
+    <ClInclude Include="..\..\extractor.h" />
+    <ClInclude Include="..\..\file.h" />
+    <ClInclude Include="..\..\file_reader.h" />
+    <ClInclude Include="..\..\file_store.h" />
+    <ClInclude Include="..\..\file_ver.h" />
+    <ClInclude Include="..\..\firewall_product_detection.h" />
+    <ClInclude Include="..\..\has_exception_namespace_fix.h" />
+    <ClInclude Include="..\..\highres_timer-win32.h" />
+    <ClInclude Include="..\..\lang_enc.h" />
+    <ClInclude Include="..\..\localization.h" />
+    <ClInclude Include="..\..\lock_ptr.h" />
+    <ClInclude Include="..\..\logging.h" />
+    <ClInclude Include="..\..\marshal_by_value.h" />
+    <ClInclude Include="..\..\md5.h" />
+    <ClInclude Include="..\..\module_utils.h" />
+    <ClInclude Include="..\..\object_factory.h" />
+    <ClInclude Include="..\..\omaha_version.h" />
+    <ClInclude Include="..\..\path.h" />
+    <ClInclude Include="..\..\pe_utils.h" />
+    <ClInclude Include="..\..\popup_menu.h" />
+    <ClInclude Include="..\..\port.h" />
+    <ClInclude Include="..\..\preprocessor_fun.h" />
+    <ClInclude Include="..\..\process.h" />
+    <ClInclude Include="..\..\processor_type.h" />
+    <ClInclude Include="..\..\proc_utils.h" />
+    <ClInclude Include="..\..\program_instance.h" />
+    <ClInclude Include="..\..\queue_timer.h" />
+    <ClInclude Include="..\..\reactor.h" />
+    <ClInclude Include="..\..\regexp.h" />
+    <ClInclude Include="..\..\registry_hive.h" />
+    <ClInclude Include="..\..\registry_monitor_manager.h" />
+    <ClInclude Include="..\..\registry_store.h" />
+    <ClInclude Include="..\..\reg_key.h" />
+    <ClInclude Include="..\..\safe_format.h" />
+    <ClInclude Include="..\..\scoped_any.h" />
+    <ClInclude Include="..\..\scoped_current_directory.h" />
+    <ClInclude Include="..\..\scoped_impersonation.h" />
+    <ClInclude Include="..\..\scoped_ptr_address.h" />
+    <ClInclude Include="..\..\scoped_ptr_cotask.h" />
+    <ClInclude Include="..\..\scope_guard.h" />
+    <ClInclude Include="..\..\security\aes.h" />
+    <ClInclude Include="..\..\security\b64.h" />
+    <ClInclude Include="..\..\security\challenger.h" />
+    <ClInclude Include="..\..\security\hash-internal.h" />
+    <ClInclude Include="..\..\security\hmac.h" />
+    <ClInclude Include="..\..\security\md5_.h" />
+    <ClInclude Include="..\..\security\rc4.h" />
+    <ClInclude Include="..\..\security\rsa.h" />
+    <ClInclude Include="..\..\security\sha.h" />
+    <ClInclude Include="..\..\serializable_object.h" />
+    <ClInclude Include="..\..\service_utils.h" />
+    <ClInclude Include="..\..\shared_any.h" />
+    <ClInclude Include="..\..\shared_memory_ptr.h" />
+    <ClInclude Include="..\..\shell.h" />
+    <ClInclude Include="..\..\shutdown_callback.h" />
+    <ClInclude Include="..\..\shutdown_handler.h" />
+    <ClInclude Include="..\..\signatures.h" />
+    <ClInclude Include="..\..\signaturevalidator.h" />
+    <ClInclude Include="..\..\singleton.h" />
+    <ClInclude Include="..\..\single_instance.h" />
+    <ClInclude Include="..\..\smart_handle.h" />
+    <ClInclude Include="..\..\sta.h" />
+    <ClInclude Include="..\..\static_assert.h" />
+    <ClInclude Include="..\..\statregex.h" />
+    <ClInclude Include="..\..\sta_call.h" />
+    <ClInclude Include="..\..\store_watcher.h" />
+    <ClInclude Include="..\..\string.h" />
+    <ClInclude Include="..\..\synchronized.h" />
+    <ClInclude Include="..\..\system.h" />
+    <ClInclude Include="..\..\system_info.h" />
+    <ClInclude Include="..\..\thread.h" />
+    <ClInclude Include="..\..\thread_pool.h" />
+    <ClInclude Include="..\..\thread_pool_callback.h" />
+    <ClInclude Include="..\..\time.h" />
+    <ClInclude Include="..\..\timer.h" />
+    <ClInclude Include="..\..\tr_rand.h" />
+    <ClInclude Include="..\..\type_utils.h" />
+    <ClInclude Include="..\..\user_info.h" />
+    <ClInclude Include="..\..\user_rights.h" />
+    <ClInclude Include="..\..\utils.h" />
+    <ClInclude Include="..\..\vistautil.h" />
+    <ClInclude Include="..\..\vista_utils.h" />
+    <ClInclude Include="..\..\window_utils.h" />
+    <ClInclude Include="..\..\wmi_query.h" />
+    <ClInclude Include="..\..\wtl_atlapp_wrapper.h" />
+    <ClInclude Include="..\..\xml_utils.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\accounts.cc" />
+    <ClCompile Include="..\..\app_util.cc" />
+    <ClCompile Include="..\..\browser_utils.cc" />
+    <ClCompile Include="..\..\cgi.cc" />
+    <ClCompile Include="..\..\clipboard.cc" />
+    <ClCompile Include="..\..\commands.cc" />
+    <ClCompile Include="..\..\command_line_parser.cc" />
+    <ClCompile Include="..\..\crc.cc" />
+    <ClCompile Include="..\..\disk.cc" />
+    <ClCompile Include="..\..\encrypt.cc" />
+    <ClCompile Include="..\..\error.cc" />
+    <ClCompile Include="..\..\event_trace_controller.cc" />
+    <ClCompile Include="..\..\event_trace_provider.cc" />
+    <ClCompile Include="..\..\file.cc" />
+    <ClCompile Include="..\..\file_reader.cc" />
+    <ClCompile Include="..\..\file_store.cc" />
+    <ClCompile Include="..\..\file_ver.cc" />
+    <ClCompile Include="..\..\firewall_product_detection.cc" />
+    <ClCompile Include="..\..\highres_timer-win32.cc" />
+    <ClCompile Include="..\..\md5.cc" />
+    <ClCompile Include="..\..\module_utils.cc" />
+    <ClCompile Include="..\..\omaha_version.cc" />
+    <ClCompile Include="..\..\path.cc" />
+    <ClCompile Include="..\..\pe_utils.cc" />
+    <ClCompile Include="..\..\process.cc" />
+    <ClCompile Include="..\..\processor_type.cc" />
+    <ClCompile Include="..\..\proc_utils.cc" />
+    <ClCompile Include="..\..\program_instance.cc" />
+    <ClCompile Include="..\..\queue_timer.cc" />
+    <ClCompile Include="..\..\regexp.cc" />
+    <ClCompile Include="..\..\registry_hive.cc" />
+    <ClCompile Include="..\..\registry_monitor_manager.cc" />
+    <ClCompile Include="..\..\registry_store.cc" />
+    <ClCompile Include="..\..\reg_key.cc" />
+    <ClCompile Include="..\..\safe_format.cc" />
+    <ClCompile Include="..\..\security\aes.c" />
+    <ClCompile Include="..\..\security\b64.c" />
+    <ClCompile Include="..\..\security\challenger.cc" />
+    <ClCompile Include="..\..\security\hmac.c" />
+    <ClCompile Include="..\..\security\md5_.c" />
+    <ClCompile Include="..\..\security\rc4.c" />
+    <ClCompile Include="..\..\security\rsa.cc" />
+    <ClCompile Include="..\..\security\sha.c" />
+    <ClCompile Include="..\..\serializable_object.cc" />
+    <ClCompile Include="..\..\service_utils.cc" />
+    <ClCompile Include="..\..\shell.cc" />
+    <ClCompile Include="..\..\signatures.cc" />
+    <ClCompile Include="..\..\signaturevalidator.cc" />
+    <ClCompile Include="..\..\single_instance.cc" />
+    <ClCompile Include="..\..\sta.cc" />
+    <ClCompile Include="..\..\string.cc" />
+    <ClCompile Include="..\..\synchronized.cc" />
+    <ClCompile Include="..\..\system.cc" />
+    <ClCompile Include="..\..\system_info.cc" />
+    <ClCompile Include="..\..\thread.cc" />
+    <ClCompile Include="..\..\thread_pool.cc" />
+    <ClCompile Include="..\..\time.cc" />
+    <ClCompile Include="..\..\timer.cc" />
+    <ClCompile Include="..\..\tr_rand.cc" />
+    <ClCompile Include="..\..\user_info.cc" />
+    <ClCompile Include="..\..\user_rights.cc" />
+    <ClCompile Include="..\..\utils.cc" />
+    <ClCompile Include="..\..\vistautil.cc" />
+    <ClCompile Include="..\..\vista_utils.cc" />
+    <ClCompile Include="..\..\window_utils.cc" />
+    <ClCompile Include="..\..\wmi_query.cc" />
+    <ClCompile Include="..\..\xml_utils.cc" />
+    <ClCompile Include="Base.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
